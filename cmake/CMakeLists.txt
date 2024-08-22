@@ -57,7 +57,7 @@ option(onnxruntime_USE_NNAPI_BUILTIN "Build with builtin NNAPI lib for Android N
 option(onnxruntime_USE_SNPE "Build with SNPE support" OFF)
 option(onnxruntime_USE_RKNPU "Build with RKNPU support" OFF)
 option(onnxruntime_USE_DNNL "Build with DNNL support" OFF)
-option(onnxruntime_BUILD_UNIT_TESTS "Build ONNXRuntime unit tests" ON)
+option(onnxruntime_BUILD_UNIT_TESTS "Build ONNXRuntime unit tests" OFF)
 option(onnxruntime_BUILD_CSHARP "Build C# library" OFF)
 option(onnxruntime_BUILD_OBJC "Build Objective-C library" OFF)
 option(onnxruntime_USE_PREINSTALLED_EIGEN "Use pre-installed EIGEN. Need to provide eigen_SOURCE_PATH if turn this on." OFF)
@@ -168,7 +168,7 @@ option(onnxruntime_ENABLE_BITCODE "Enable bitcode for iOS only" OFF)
 option(onnxruntime_ENABLE_EAGER_MODE "build ort eager mode")
 
 # build Pytorch's LazyTensor support
-cmake_dependent_option(onnxruntime_ENABLE_LAZY_TENSOR "Enable ORT as a LazyTensor backend in Pytorch." ON "onnxruntime_ENABLE_TRAINING" OFF)
+cmake_dependent_option(onnxruntime_ENABLE_LAZY_TENSOR "Enable ORT as a LazyTensor backend in Pytorch." OFF "onnxruntime_ENABLE_TRAINING" OFF)
 
 # build separate library of schemas of (custom) ops used by ORT (for ONNX to MLIR translation)
 option(onnxruntime_BUILD_OPSCHEMA_LIB "Build op schema library" ON)

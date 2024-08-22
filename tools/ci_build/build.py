@@ -2481,6 +2481,7 @@ def main():
                 if args.cuda_version:
                     toolset += ",cuda=" + args.cuda_version
                 cmake_extra_args = ["-A", "x64", "-T", toolset, "-G", args.cmake_generator]
+                #cmake_extra_args = ["-A", "x64,version=8.1", "-T", toolset, "-G", args.cmake_generator]
             if args.enable_wcos:
                 cmake_extra_defines.append("CMAKE_USER_MAKE_RULES_OVERRIDE=wcos_rules_override.cmake")
         elif args.cmake_generator is not None and not (is_macOS() and args.use_xcode):
