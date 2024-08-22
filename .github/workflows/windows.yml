@@ -22,6 +22,12 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v2
         with:
           activate-environment: ""
+      - name: Setup cmake
+        uses: jwlawson/actions-setup-cmake@v2
+        with:
+          cmake-version: '3.25.x'
+      - name: Use cmake
+        run: cmake --version
       - name: Install Windows 8.1 SDK
         run: |
           import subprocess
